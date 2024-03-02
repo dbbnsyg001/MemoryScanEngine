@@ -1,0 +1,23 @@
+# Visual studio filter group
+function(source_group_by_dir source_files)
+    if(MSVC)
+        set(cur_dir ${CMAKE_CURRENT_SOURCE_DIR})
+        foreach(file ${${source_files}})
+            string(REGEX REPLACE ${cur_dir}/\(.*\) \\1 file_path ${file})
+            string(REGEX REPLACE "\(.*\)/.*" \\1 sgbd_group_name ${file_path})
+            string(COMPARE EQUAL ${file_path} ${sgbd_group_name} nogroup)
+            string(REPLACE "/" "\\" sgbd_group_name ${sgbd_group_name})
+            get_filename_component(file_extension ${file} EXT)
+            if(file_extension STREQUAL ".ui")                  
+                source_group("Form Files" FILES ${file})
+            elseif(file_extension STREQUAL ".qrc")
+                source_group("Resource Files" FILES ${file})   
+				elseif(file_extension STREQUAL ".ts")
+                source_group("Language" FILES ${file})  
+            elseif(NOT nogroup)
+                source_group(${sgbd_group_name} FILES ${file})  # using dir name as group name
+            endif()
+        endforeach(file)
+    endif(MSVC)
+endfunction(source_group_by_dir)
+
