@@ -12,7 +12,7 @@ Windows and ARM64 memory scan tool
 ### ARM64Scanner
 1.`NDKr21` 及以上,推荐NDK r21  
 2.`Cmake 3.2.2`及以上  
-3.`ninja` [ninja github](https://github.com/ldcsaa/HP-Socket) 下载后放入cmake bin目录
+3.`ninja` [ninja release github](https://github.com/ninja-build/ninja/releases) 下载后放入cmake bin目录
 
 ### ARM64ScannerForQt
 1.`msvc_2015_64`及以上,推荐msvc_2015_64  
