@@ -12,7 +12,7 @@ Windows and ARM64 memory scan tool
 ### ARM64Scanner
 1.`NDKr21` 及以上,推荐NDK r21  
 2.`Cmake 3.2.2`及以上  
-3.`ninja` https://github.com/ninja-build/ninja/releases 下载后放入cmake bin目录
+3.`ninja` [ninja github](https://github.com/ldcsaa/HP-Socket) 下载后放入cmake bin目录
 
 ### ARM64ScannerForQt
 1.`msvc_2015_64`及以上,推荐msvc_2015_64  
@@ -31,5 +31,5 @@ MemScanner是通用命令行工具,用于测试或者简单扫描使用
 
 ## 说明 
 项目以精简易懂规范化为目录  
-1.为了减少Socket的实现对开发和阅读者造成困扰和bug，统一使用HP Socket进行socket开发:`https://github.com/ldcsaa/HP-Socket`  
+1.为了减少Socket的实现对开发和阅读者造成困扰和bug，统一使用HP-Socket进行socket开发:[HP-Socket github](https://github.com/ldcsaa/HP-Socket)  
 2.Qt界面使用widget继承模式，尽量保证通用UI功能集中在通用父类，主界面只用于数据业务交互  
